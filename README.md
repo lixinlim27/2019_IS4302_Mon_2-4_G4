@@ -11,7 +11,7 @@ Follow the steps in https://github.com/suenchunhui/easy-hyperledger-composer to 
 Download the vagrant environment.
 
 ### Vagrantfile setup
-Port: 3001-3008 are to be mapped in the vagrantfile
+Amend as follow to map participants to the respective ports in the vagrantfile. Ports are required from 3001-3008.
 ```
   config.vm.network :forwarded_port, guest: 8080, host: 8080  #composer
   config.vm.network :forwarded_port, guest: 8001, host: 8001  #reverse-proxy
