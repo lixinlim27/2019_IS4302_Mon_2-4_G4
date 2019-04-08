@@ -100,8 +100,9 @@ cd to express_server
 npm init
 npm install express express-http-proxy --save
 ```
-Setup the folder as follows:
+#### Setup the folder as follows: <br>
 <img>
+<br>
 `node server.js`
 
 #### a. Access to Healthchain application which is available at http://localhost:8001 <br>
