@@ -49,20 +49,35 @@ Access to Cloud9 IDE which is available at "http://localhost:8181"
 ```
 Access to Composer Playground which is available at "http://localhost:8080"
 
-Create Test Data according to "testData.txt":
+Create Test Data:
 ```
-  In the test tab, directly create
-  - Hospital
-  - Administrator
-  - Doctor
-  - Patient
-  - InsuranceCompany
+  In the test tab, copy and paste data according to "testData.txt"
+  
+  (a) directly create
+      - Hospital
+      - Administrator
+      - Doctor
+      - Patient
+      - InsuranceCompany
+  
+  (b) submit transaction to create
+      - Drug
+      - Prescription Record
+      - Medical Record
+      - Invoice
+      - Medical Access Request
+      - Insurance Claim
+      - Insurance Record
 ```
 
 Add Participants:
+```
   `npm run add_participant maeid1 mae@biznet.org healthchain-business-network`
+  `npm run add_participant doctor1 doctor1@biznet.org healthchain-business-network` <-- need @cindy's help
+```
 
 ### 3. REST server
+Run the following commands
 ```bash
   `npm run start_rest-server doctor1@healthchain-business-network 3001`
   `npm run start_rest-server doctor2@healthchain-business-network 3002`
@@ -95,7 +110,7 @@ Usernames:
     Patient2
     InsuranceCompany1
     InsuranceCompany2
-(Password is the same as username)
+(Password can be omitted)
 ```
 ### Stop Network
 ```bash
