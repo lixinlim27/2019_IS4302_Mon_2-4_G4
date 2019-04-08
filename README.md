@@ -77,7 +77,7 @@ Add Participants:
 ```
 
 ### 3. REST server
-Run the following commands
+Run the following commands.
 ```bash
   `npm run start_rest-server doctor1@healthchain-business-network 3001`
   `npm run start_rest-server doctor2@healthchain-business-network 3002`
@@ -110,7 +110,7 @@ Usernames:
     Patient2
     InsuranceCompany1
     InsuranceCompany2
-(Password can be omitted)
+    (Password can be omitted)
 ```
 ### Stop Network
 ```bash
