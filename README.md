@@ -11,8 +11,9 @@ Follow the steps in https://github.com/suenchunhui/easy-hyperledger-composer to 
 Download the vagrant environment.
 
 ### Vagrantfile setup
-Amend as follow to map participants to the respective ports in the vagrantfile. Ports are required from 3001-3008.
+Amend as follow to map participants to the respective ports in the vagrantfile. Ports required are from 3001-3008.
 ```
+  ...
   config.vm.network :forwarded_port, guest: 8080, host: 8080  #composer
   config.vm.network :forwarded_port, guest: 8001, host: 8001  #reverse-proxy
   config.vm.network :forwarded_port, guest: 8181, host: 8181  #cloud9-ide
@@ -34,7 +35,7 @@ Amend as follow to map participants to the respective ports in the vagrantfile. 
 cd to ~/easy-hyperledger-composer
 vagrant up
 ```
-Cloud9 IDE available at "http://localhost:8181" 
+Access to Cloud9 IDE which is available at "http://localhost:8181" 
 
 ### 2. Deploy Hyperledger Composer
 ```bash
@@ -46,7 +47,15 @@ Cloud9 IDE available at "http://localhost:8181"
   npm run install_bna healthchain-business-network healthchain.bna  #deploy BNA file(arg 2) to network using name(arg 1)
   npm run start_playground       #(optional) start hyperledger composer
 ```
-Composer Playground available at "http://localhost:8080"
+Access to Composer Playground which is available at "http://localhost:8080"
+
+Create Test Data according to "testData.txt":
+  `In the test tab, directly create`
+  `- Hospital
+  `- Administrator`
+  `- Doctor`
+  `- Patient`
+  `- InsuranceCompany`
 
 Add Participants:
   `npm run add_participant maeid1 mae@biznet.org healthchain-business-network`
@@ -63,8 +72,16 @@ Add Participants:
   `npm run start_rest-server insuranceCompany2@healthchain-business-network 3008`
 ```
 
-### HealthChain Application server
-The Healthchain application available at http://localhost:8001
+### 4. HealthChain Application server
+```bash
+cd to express_server
+npm init
+<whatever commands to setup the folder - need ur help @cindy>
+Setup the folder as follows:
+<img>
+node server.js
+```
+Access to Healthchain application which is available at http://localhost:8001
 
 Usernames:
 ```
