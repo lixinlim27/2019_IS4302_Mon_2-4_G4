@@ -132,7 +132,7 @@ Passwords:
   npm run clean_network 
 ```
 ## Components
- > The blockchain component : Hyperledger Composer.
- > The middleware component : Node.js 
+ > The blockchain component : Hyperledger Composer. <br>
+ > The middleware component : Node.js <br>
  > The user interface : Bootstrap, Angular
 
