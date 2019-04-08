@@ -50,12 +50,14 @@ Access to Cloud9 IDE which is available at "http://localhost:8181"
 Access to Composer Playground which is available at "http://localhost:8080"
 
 Create Test Data according to "testData.txt":
-  `In the test tab, directly create`
-  `- Hospital
-  `- Administrator`
-  `- Doctor`
-  `- Patient`
-  `- InsuranceCompany`
+```
+  In the test tab, directly create
+  - Hospital
+  - Administrator
+  - Doctor
+  - Patient
+  - InsuranceCompany
+```
 
 Add Participants:
   `npm run add_participant maeid1 mae@biznet.org healthchain-business-network`
