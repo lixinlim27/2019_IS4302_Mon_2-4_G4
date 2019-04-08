@@ -99,20 +99,25 @@ Run the following commands.
 cd to express_server
 npm init
 npm install express express-http-proxy --save
+```
 Setup the folder as follows:
 <img>
-node server.js
-```
+`node server.js`
+
 #### a. Access to Healthchain application which is available at http://localhost:8001 <br>
 #### b. Login to the website with the following credentials. <br>
 ```
 Usernames:
+  In the dropdown list, select role "DOCTOR"
     - Doctor1
     - Doctor2
+  In the dropdown list, select role "ADMINISTRATOR"
     - Admin1
     - Admin2
+  In the dropdown list, select role "PATIENT"
     - Patient1
     - Patient2
+  In the dropdown list, select role "INSURANCECOMPANY"
     - InsuranceCompany1
     - InsuranceCompany2
 Passwords:
