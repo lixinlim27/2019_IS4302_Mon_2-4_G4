@@ -23,11 +23,11 @@ Amend as follow to map participants to the respective ports in the vagrantfile. 
   config.vm.network :forwarded_port, guest: 3001, host: 3001  #doctor1
   config.vm.network :forwarded_port, guest: 3002, host: 3002  #doctor2
   config.vm.network :forwarded_port, guest: 3003, host: 3003  #admin1
-  config.vm.network :forwarded_port, guest: 3000, host: 3004  #admin2
-  config.vm.network :forwarded_port, guest: 3000, host: 3005  #patient1
-  config.vm.network :forwarded_port, guest: 3000, host: 3006  #patient2
-  config.vm.network :forwarded_port, guest: 3000, host: 3007  #insuranceCompany1
-  config.vm.network :forwarded_port, guest: 3000, host: 3008  #insuranceCompany2
+  config.vm.network :forwarded_port, guest: 3004, host: 3004  #admin2
+  config.vm.network :forwarded_port, guest: 3005, host: 3005  #patient1
+  config.vm.network :forwarded_port, guest: 3006, host: 3006  #patient2
+  config.vm.network :forwarded_port, guest: 3007, host: 3007  #insuranceCompany1
+  config.vm.network :forwarded_port, guest: 3008, host: 3008  #insuranceCompany2
   ...
  ```
 ### 1. Start vagrant
@@ -70,10 +70,10 @@ Create Test Data:
       - Insurance Record
 ```
 
-Add Participants:
+Issue Identities:
 ```
   `npm run add_participant maeid1 mae@biznet.org healthchain-business-network`
-  `npm run add_participant doctor1 doctor1@biznet.org healthchain-business-network` <-- need @cindy's help
+  `npm run add_participant doctor1 doctor1@healthchain-business-network healthchain-business-network`
 ```
 
 ### 3. REST server
@@ -93,7 +93,7 @@ Run the following commands.
 ```bash
 cd to express_server
 npm init
-<whatever commands to setup the folder - need ur help @cindy>
+npm install express express-http-proxy --save
 Setup the folder as follows:
 <img>
 node server.js
