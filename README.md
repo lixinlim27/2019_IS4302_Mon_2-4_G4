@@ -134,3 +134,5 @@ Passwords:
 ## Components
  > The blockchain component : Hyperledger Composer.
  > The middleware component : Node.js 
+ > The user interface : Bootstrap, Angular
+
