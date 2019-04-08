@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
+
+	<title>Login Page</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+
+
+	<style type="text/css">
+		@media (min-width: 992px) {
+			.col-md-4 {
+				width: 33.33333333%;
+				margin-left: 32%;
+			}
+		}
+
+	</style>
+	
+	<style>
+	.section{
+
+		background: url(images/background.png);
+		  height: 656px;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  position: relative;
+	}
+	
+	
+		
+	
+	
+	
+	</style>
+	
+	
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body>
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row" style="display:block; margin-left:auto; margin-right:auto;">
+				<div class="col-md-4">
+
+					<div id="product-tab">
+						<!-- tab nav -->
+						<ul class="tab-nav">
+							<li class="active"><a data-toggle="tab" href="#login">Login</a></li>
+						</ul>
+						<!-- /tab nav -->
+
+						<!-- tab content -->
+						<div class="tab-content">
+							<!-- tab1  -->
+							<div id="login" class="tab-pane fade in active">
+								<form class="review-form" id="login-form">
+									<b>Role</b>:
+									<select class="input-select input" name="role">
+										<option value="doctor"> &nbsp;&nbsp; Doctor &nbsp;&nbsp; </option>
+										<option value="patient"> &nbsp;&nbsp; Patient &nbsp;&nbsp; </option>
+										<option value="insuranceCompany"> &nbsp;&nbsp; Insurance Company &nbsp;&nbsp; </option>
+										<option value="administrator"> &nbsp;&nbsp; Administrator &nbsp;&nbsp; </option>
+									</select> <b>Username</b>: <input class="input" type="username" placeholder="Username" name="username"> <b>Password</b>: <input class="input" type="password" placeholder="Password" name="password">
+
+									<button class="primary-btn" type="submit">Login</button>
+								</form>
+							</div>
+							<!-- /tab1  -->
+						</div>
+						<!-- /tab content  -->
+					</div>
+
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
+
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/yiBuy_lib.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script>
+
+
+
+</body>
+<script type="text/javascript">
+	$("#login-form").submit(function(event) {
+		event.preventDefault();
+		// $("#username").val	
+		// submit form data to server
+		console.log(
+			"submit"
+		)
+		let rsl = {};
+		$('#login-form')
+			.serializeArray()
+			.forEach(a => {
+				rsl[a.name] = a.value;
+				if (a.name == "username")
+					localStorage.setItem("role", a.value)
+			});
+
+		console.log(rsl)
+
+		if (rsl["role"] === "doctor") {
+			$.ajax({
+				method: "GET",
+				url: "/doctor1/api/org.healthchain.Doctor/" + rsl["username"],
+			}).done(function(msg) {
+				console.log(msg);
+				sessionStorage.setItem("licenseNumber", msg.licenseNumber);
+				sessionStorage.setItem("hospital", msg.hospital);
+				sessionStorage.setItem("userID", msg.userID);
+				sessionStorage.setItem("nric", msg.nric);
+				sessionStorage.setItem("fullName", msg.fullName);
+				sessionStorage.setItem("nationality", msg.nationality);
+				sessionStorage.setItem("dob", msg.dob);
+				sessionStorage.setItem("phoneNumber", msg.phoneNumber);
+				sessionStorage.setItem("email", msg.email);
+				sessionStorage.setItem("address", msg.address);
+				sessionStorage.setItem("accessRole", msg.accessRole);
+				sessionStorage.setItem("username", msg.username);
+				sessionStorage.setItem("password", msg.password);
+				window.location = "/doctor/doctorViewDrugRecord.html";
+			}).fail(function() {
+				$.notify("Login Failed")
+			});
+		}
+		else if (rsl["role"] === "patient") {
+
+			$.ajax({
+				method: "GET",
+				url: "/patient1/api/org.healthchain.Patient/" + rsl["username"],
+			}).done(function(msg) {
+				console.log(msg);
+				sessionStorage.setItem("hospital", msg.hospital);
+				sessionStorage.setItem("userID", msg.userID);
+				sessionStorage.setItem("nric", msg.nric);
+				sessionStorage.setItem("fullName", msg.fullName);
+				sessionStorage.setItem("nationality", msg.nationality);
+				sessionStorage.setItem("dob", msg.dob);
+				sessionStorage.setItem("phoneNumber", msg.phoneNumber);
+				sessionStorage.setItem("email", msg.email);
+				sessionStorage.setItem("address", msg.address);
+				sessionStorage.setItem("accessRole", msg.accessRole);
+				sessionStorage.setItem("username", msg.username);
+				sessionStorage.setItem("password", msg.password);
+				window.location = "/patient/patientMedicalRecord.html";
+			}).fail(function() {
+				$.notify("Login Failed")
+			});
+		}
+		else if (rsl["role"] === "insuranceCompany") {
+			$.ajax({
+				method: "GET",
+				url: "/insuranceCompany1/api/org.healthchain.InsuranceCompany/" + rsl["username"],
+			}).done(function(msg) {
+				console.log(msg);
+				sessionStorage.setItem("userID", msg.userID);
+				sessionStorage.setItem("nric", msg.nric);
+				sessionStorage.setItem("fullName", msg.fullName);
+				sessionStorage.setItem("nationality", msg.nationality);
+				sessionStorage.setItem("dob", msg.dob);
+				sessionStorage.setItem("phoneNumber", msg.phoneNumber);
+				sessionStorage.setItem("email", msg.email);
+				sessionStorage.setItem("address", msg.address);
+				sessionStorage.setItem("accessRole", msg.accessRole);
+				sessionStorage.setItem("username", msg.username);
+				sessionStorage.setItem("password", msg.password);
+				window.location = "/insuranceCompany/insuranceRecord.html";
+			}).fail(function() {
+				$.notify("Login Failed");
+			});
+		}
+		else {
+			$.ajax({
+				method: "GET",
+				url: "/admin1/api/org.healthchain.Administrator/" + rsl["username"],
+			}).done(function(msg) {
+				console.log(msg);
+				sessionStorage.setItem("hospital", msg.hospital);
+				sessionStorage.setItem("userID", msg.userID);
+				sessionStorage.setItem("nric", msg.nric);
+				sessionStorage.setItem("fullName", msg.fullName);
+				sessionStorage.setItem("nationality", msg.nationality);
+				sessionStorage.setItem("dob", msg.dob);
+				sessionStorage.setItem("phoneNumber", msg.phoneNumber);
+				sessionStorage.setItem("email", msg.email);
+				sessionStorage.setItem("address", msg.address);
+				sessionStorage.setItem("accessRole", msg.accessRole);
+				sessionStorage.setItem("username", msg.username);
+				sessionStorage.setItem("password", msg.password);
+				window.location = "/administrator/adminDrugRecord.html";
+			}).fail(function() {
+				$.notify("Login Failed");
+			});
+		}
+	});
+</script>
+
+</html>
