@@ -39,19 +39,18 @@ Access to Cloud9 IDE which is available at "http://localhost:8181"
 
 ### 2. Deploy Hyperledger Composer
 ```bash
+  npm run clean_network
   npm run build_image            #build images (only needs to be run once ever)
-  npm run test_bna               #run embedded unittests on BNA 
   npm run setup_crypto           #setup crypto and config materials for fabric
   npm run start_fabric           #setup all fabric docker containers
-  npm run build_bna healthchain.bna  #compile BNA file, and write to file(argument 1)
-  npm run install_bna healthchain-business-network healthchain.bna  #deploy BNA file(arg 2) to network using name(arg 1)
-  npm run start_playground       #(optional) start hyperledger composer
+  npm run start_playground       #start hyperledger composer
 ```
-Access to Composer Playground which is available at "http://localhost:8080"
 
-Create Test Data:
+a. Access to Composer Playground which is available at "http://localhost:8080"
+b. Deploy the healthchain.bna file
+c. Create Test Data:
 ```
-  In the test tab, copy and paste data according to "testData.txt"
+  In the Test Tab, copy and paste the data according to "testData.txt" to instantiate participants and assets. 
   
   (a) directly create
       - Hospital
@@ -69,11 +68,17 @@ Create Test Data:
       - Insurance Claim
       - Insurance Record
 ```
-
-Issue Identities:
+d. Issue Identities:
 ```
-  `npm run add_participant maeid1 mae@biznet.org healthchain-business-network`
-  `npm run add_participant doctor1 doctor1@healthchain-business-network healthchain-business-network`
+  Create composer credentials for each participant, using the ID name stated respectively. 
+  - doctor1
+  - doctor2
+  - admin1
+  - admin2
+  - patient1
+  - patient2
+  - insuranceCompany1
+  - insuranceCompany2
 ```
 
 ### 3. REST server
@@ -98,10 +103,10 @@ Setup the folder as follows:
 <img>
 node server.js
 ```
-Access to Healthchain application which is available at http://localhost:8001
-
-Usernames:
+a. Access to Healthchain application which is available at http://localhost:8001
+b. Login to the website with the following credentials.
 ```
+  Usernames:
     Doctor1
     Doctor2
     Admin1
@@ -110,6 +115,7 @@ Usernames:
     Patient2
     InsuranceCompany1
     InsuranceCompany2
+  Passwords:
     (Password can be omitted)
 ```
 ### Stop Network
