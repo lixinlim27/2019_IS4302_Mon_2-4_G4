@@ -8,7 +8,7 @@ HealthChain is a Blockchain-based solution for the healthcare industry. It is bu
 ### Hyperledger setup
 Follow the steps in https://github.com/suenchunhui/easy-hyperledger-composer to start the hyperledger setup.
 <br>
-Download the vagrant environment
+Download the vagrant environment.
 
 ### Vagrantfile setup
 Port: 3001-3008 are to be mapped in the vagrantfile
