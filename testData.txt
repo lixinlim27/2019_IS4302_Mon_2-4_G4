@@ -1,0 +1,365 @@
+****************************************Hospital**************************************************
+{
+  "$class": "org.healthchain.Hospital",
+  "hospitalID": "hospital1",
+  "licenseNumber": "A12345B",
+  "name": "National University Hospital (NUH)",
+  "phoneNumber": 67795555,
+  "email": "administrative@nuhs.edu.sg",
+  "address": "5 Lower Kent Ridge Road Singapore 119074"
+}
+
+{
+  "$class": "org.healthchain.Hospital",
+  "hospitalID": "hospital2",
+  "licenseNumber": "A09876B",
+  "name": "Singapore General Hospital (SGH)",
+  "phoneNumber": 62223322,
+  "email": "sghfeedback@sgh.com.sg",
+  "address": "Outram Rd, Singapore 169608"
+}
+****************************************Hospital**************************************************
+
+
+
+***************************************Administrator***********************************************
+{
+  "$class": "org.healthchain.Administrator",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "userID": "admin1",
+  "nric": "S9123456A",
+  "fullName": "Tom Lee",
+  "nationality": "Singaporean",
+  "dob": "2000-03-01",
+  "phoneNumber": 91234567,
+  "email": "tomlee@gmail.com",
+  "address": "1 daisy road #01-01 Singapore 777001",
+  "accessRole": "ADMINISTRATOR",
+  "username": "admin1",
+  "password": "adminpw1"
+}
+
+{
+  "$class": "org.healthchain.Administrator",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "userID": "admin2",
+  "nric": "S9123456B",
+  "fullName": "Alice Ng",
+  "nationality": "Singaporean",
+  "dob": "1999-12-12",
+  "phoneNumber": 81234567,
+  "email": "aliceng@gmail.com",
+  "address": "2 sunflower road #02-02 Singapore 888002",
+  "accessRole": "ADMINISTRATOR",
+  "username": "admin2",
+  "password": "adminpw2"
+}
+***************************************Administrator***********************************************
+
+
+
+*****************************************Doctor****************************************************
+{
+  "$class": "org.healthchain.Doctor",
+  "licenseNumber": "ABCDEFG",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "userID": "doctor1",
+  "nric": "S1223456C",
+  "fullName": "bob toh",
+  "nationality": "Singaporean",
+  "dob": "1950-03-24",
+  "phoneNumber": 90987654,
+  "email": "bobtoh@gmail.com",
+  "address": "3 ang mo kio ave 1 Singapore 304209",
+  "accessRole": "DOCTOR",
+  "username": "doctor1",
+  "password": "doctorpw1"
+}
+
+{
+  "$class": "org.healthchain.Doctor",
+  "licenseNumber": "QWERTYU",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "userID": "doctor2",
+  "nric": "S8723456C",
+  "fullName": "catherine teo",
+  "nationality": "Singaporean",
+  "dob": "1987-01-24",
+  "phoneNumber": 91233454,
+  "email": "catherineteo@gmail.com",
+  "address": "4 woodlands drive 1 Singapore 730004",
+  "accessRole": "DOCTOR",
+  "username": "doctor2",
+  "password": "doctorpw2"
+}
+*****************************************Doctor****************************************************
+
+
+
+*****************************************Patient***************************************************
+{
+  "$class": "org.healthchain.Patient",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "userID": "patient1",
+  "nric": "S9012345F",
+  "fullName": "cindy lee",
+  "nationality": "Singaporean",
+  "dob": "1990-01-23",
+  "phoneNumber": 80761234,
+  "email": "cindylee@gmail.com",
+  "address": "1 pending road #01-90 Singapore 901001",
+  "accessRole": "PATIENT",
+  "username": "patient1",
+  "password": "patientpw1"
+}
+
+{
+  "$class": "org.healthchain.Patient",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "userID": "patient2",
+  "nric": "S1012345F",
+  "fullName": "ethan lee",
+  "nationality": "Singaporean",
+  "dob": "1945-07-12",
+  "phoneNumber": 83276134,
+  "email": "ethanlee@gmail.com",
+  "address": "3 dragon road #02-90 Singapore 901003",
+  "accessRole": "PATIENT",
+  "username": "patient2",
+  "password": "patientpw2"
+}
+*****************************************Patient***************************************************
+
+
+
+************************************Insurance Company**********************************************
+{
+  "$class": "org.healthchain.InsuranceCompany",
+  "userID": "insuranceCompany1",
+  "nric": "ZXCVBNM",
+  "fullName": "NTUC Income",
+  "nationality": "Singapore",
+  "dob": "1970-01-01",
+  "phoneNumber": 67881777,
+  "email": "enquiry@income.com.sg",
+  "address": "900 Woodlands Drive #05-06 Woodlands Civic Centre, Singapore 730900",
+  "accessRole": "INSURANCECOMPANY",
+  "username": "insurancecompany1",
+  "password": "insurancecompanypw1"
+}
+
+{
+  "$class": "org.healthchain.InsuranceCompany",
+  "userID": "insuranceCompany2",
+  "nric": "ASDFGHJ",
+  "fullName": "AIA",
+  "nationality": "Hong Kong",
+  "dob": "1919-06-20",
+  "phoneNumber": 18002488000,
+  "email": "enquiry@aia.com.sg",
+  "address": "1 Finlayson Green Singapore 049246",
+  "accessRole": "INSURANCECOMPANY",
+  "username": "insurancecompany2",
+  "password": "insurancecompanypw2"
+}
+************************************Insurance Company**********************************************
+
+
+
+*****************************************Drug******************************************************
+{
+  "$class": "org.healthchain.CreateDrug",
+  "administrator": "resource:org.healthchain.Administrator#admin1",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "name": "Zanamivir",
+  "quantity": 10
+}
+
+{
+  "$class": "org.healthchain.CreateDrug",
+  "administrator": "resource:org.healthchain.Administrator#admin1",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "name": "Acetaminophen",
+  "quantity": 20
+}
+
+{
+  "$class": "org.healthchain.CreateDrug",
+  "administrator": "resource:org.healthchain.Administrator#admin2",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "name": "Cough syrup",
+  "quantity": 30
+}
+*****************************************Drug******************************************************
+
+
+
+***********************************Prescription Record*********************************************
+{
+  "$class": "org.healthchain.CreatePrescriptionRecord",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "doctor": "resource:org.healthchain.Doctor#doctor1",
+  "patient": "resource:org.healthchain.Patient#patient1",
+  "datetime": "2019-03-24T07:43:58.806Z",
+  "drugs": [{
+				"$class": "org.healthchain.Drug",
+				"drugID": "464750646",
+				"administrator": "resource:org.healthchain.Administrator#admin1",
+				"hospital": "resource:org.healthchain.Hospital#hospital1",
+				"name": "Zanamivir",
+				"quantity": 5
+			}],
+  "status": "UNCOLLECTED"
+}
+
+{
+  "$class": "org.healthchain.CreatePrescriptionRecord",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "doctor": "resource:org.healthchain.Doctor#doctor2",
+  "patient": "resource:org.healthchain.Patient#patient2",
+  "datetime": "2019-03-24T07:43:58.806Z",
+  "drugs": [{
+				"$class": "org.healthchain.Drug",
+				"drugID": "464750646",
+				"administrator": "resource:org.healthchain.Administrator#admin2",
+				"hospital": "resource:org.healthchain.Hospital#hospital2",
+				"name": "Cough Syrup",
+				"quantity": 15
+			}],
+  "status": "UNCOLLECTED"
+}
+***********************************Prescription Record*********************************************
+
+
+
+**************************************Medical Record***********************************************
+{
+  "$class": "org.healthchain.CreateMedicalRecord",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "doctor": "resource:org.healthchain.Doctor#doctor1",
+  "patient": "resource:org.healthchain.Patient#patient1",
+  "diagnosis": "high fever, flu, sore throat and cough",
+  "labReports": [],
+  "images": [],
+  "medicalCertificate": [],
+  "datetime": "2019-03-24"
+}
+
+{
+  "$class": "org.healthchain.CreateMedicalRecord",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "doctor": "resource:org.healthchain.Doctor#doctor2",
+  "patient": "resource:org.healthchain.Patient#patient2",
+  "diagnosis": "sprained ankle",
+  "labReports": [],
+  "images": [],
+  "medicalCertificate": [],
+  "datetime": "2019-01-22"
+}
+**************************************Medical Record***********************************************
+
+
+
+*****************************************Invoice***************************************************
+{
+  "$class": "org.healthchain.CreateInvoice",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "administrator": "resource:org.healthchain.Administrator#admin1",
+  "patient": "resource:org.healthchain.Patient#patient1",
+  "description": "Consultation and Zanamivir medication",
+  "amount": 20.50,
+  "datetime": "2019-01-05"
+}
+
+{
+  "$class": "org.healthchain.CreateInvoice",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "administrator": "resource:org.healthchain.Administrator#admin2",
+  "patient": "resource:org.healthchain.Patient#patient2",
+  "description": "Consultation and Acetaminophen medication",
+  "amount": 19.00,
+  "datetime": "2019-01-29"
+}
+*****************************************Invoice***************************************************
+
+
+
+*********************************Medical Access Request********************************************
+{
+  "$class": "org.healthchain.SubmitRequestToViewMedicalRecord",
+  "insuranceCompany": "resource:org.healthchain.InsuranceCompany#insuranceCompany1",
+  "hospital": "resource:org.healthchain.Hospital#hospital1",
+  "patientNric": "S9012345F",
+  "status": "PENDING"
+}
+
+{
+  "$class": "org.healthchain.SubmitRequestToViewMedicalRecord",
+  "insuranceCompany": "resource:org.healthchain.InsuranceCompany#insuranceCompany2",
+  "hospital": "resource:org.healthchain.Hospital#hospital2",
+  "patientNric": "S1012345F",
+  "status": "PENDING"
+}
+*********************************Medical Access Request********************************************
+
+
+*************************************Insurance Claim***********************************************
+{
+  "$class": "org.healthchain.CreateInsuranceClaim",
+  "patient": "resource:org.healthchain.Patient#patient1",
+  "insuranceCompany": "resource:org.healthchain.InsuranceCompany#insuranceCompany1",
+  "description": "Medical checkup",
+  "amount": 100,
+  "datetime": "2019-03-29T22:41:54.524Z",
+  "status": "PENDING"
+}
+
+{
+  "$class": "org.healthchain.CreateInsuranceClaim",
+  "patient": "resource:org.healthchain.Patient#patient2",
+  "insuranceCompany": "resource:org.healthchain.InsuranceCompany#insuranceCompany2",
+  "description": "Full body checkup",
+  "amount": 250,
+  "datetime": "2019-03-29T22:41:54.524Z",
+  "status": "PENDING"
+}
+*************************************Insurance Claim***********************************************
+
+
+*************************************Insurance Record**********************************************
+{
+  "$class": "org.healthchain.CreateInsuranceRecord",
+  "insuranceCompany": "resource:org.healthchain.InsuranceCompany#insuranceCompany1",
+  "patient": "resource:org.healthchain.Patient#patient1",
+  "startDate": "2019-03-29T23:06:55.715Z",
+  "effectiveDuration": 12,
+  "planType": "MIDDLE",
+  "insuredAmount": 123450,
+  "premium": 120,
+  "description": "FIRST"
+}
+
+{
+  "$class": "org.healthchain.CreateInsuranceRecord",
+  "insuranceCompany": "resource:org.healthchain.InsuranceCompany#insuranceCompany2",
+  "patient": "resource:org.healthchain.Patient#patient1",
+  "startDate": "2019-03-29T23:06:55.715Z",
+  "effectiveDuration": 24,
+  "planType": "HIGH",
+  "insuredAmount": 250000,
+  "premium": 200,
+  "description": "FIRST"
+}
+
+{
+  "$class": "org.healthchain.CreateInsuranceRecord",
+  "insuranceCompany": "resource:org.healthchain.InsuranceCompany#insuranceCompany2",
+  "patient": "resource:org.healthchain.Patient#patient2",
+  "startDate": "2019-03-29",
+  "effectiveDuration": 24,
+  "planType": "HIGH",
+  "insuredAmount": 250000,
+  "premium": 200,
+  "description": "FIRST"
+}
+*************************************Insurance Record**********************************************
