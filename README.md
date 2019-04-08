@@ -46,9 +46,9 @@ Access to Cloud9 IDE which is available at "http://localhost:8181"
   npm run start_playground       #start hyperledger composer
 ```
 
-a. Access to Composer Playground which is available at "http://localhost:8080"
-b. Deploy the healthchain.bna file
-c. Create Test Data:
+#### a. Access to Composer Playground which is available at "http://localhost:8080" <br>
+#### b. Deploy the healthchain.bna file <br>
+#### c. Create Test Data: <br>
 ```
   In the Test Tab, copy and paste the data according to "testData.txt" to instantiate participants and assets. 
   
