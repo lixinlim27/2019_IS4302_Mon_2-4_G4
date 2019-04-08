@@ -82,16 +82,16 @@ Access to Cloud9 IDE which is available at "http://localhost:8181"
 ```
 
 ### 3. REST server
-Run the following commands.
+Run the following commands
 ```bash
-  `npm run start_rest-server doctor1@healthchain-business-network 3001`
-  `npm run start_rest-server doctor2@healthchain-business-network 3002`
-  `npm run start_rest-server admin1@healthchain-business-network 3003`
-  `npm run start_rest-server admin2@healthchain-business-network 3004`
-  `npm run start_rest-server patient1@healthchain-business-network 3005`
-  `npm run start_rest-server patient2@healthchain-business-network 3006`
-  `npm run start_rest-server insuranceCompany1@healthchain-business-network 3007`
-  `npm run start_rest-server insuranceCompany2@healthchain-business-network 3008`
+npm run start_rest-server doctor1@healthchain-business-network 3001
+npm run start_rest-server doctor2@healthchain-business-network 3002
+npm run start_rest-server admin1@healthchain-business-network 3003
+npm run start_rest-server admin2@healthchain-business-network 3004
+npm run start_rest-server patient1@healthchain-business-network 3005
+npm run start_rest-server patient2@healthchain-business-network 3006
+npm run start_rest-server insuranceCompany1@healthchain-business-network 3007
+npm run start_rest-server insuranceCompany2@healthchain-business-network 3008
 ```
 
 ### 4. HealthChain Application server
