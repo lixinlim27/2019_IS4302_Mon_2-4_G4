@@ -96,7 +96,7 @@ npm run start_rest-server insuranceCompany2@healthchain-business-network 3008
 
 ### 4. HealthChain Application server
 ```bash
-cd to express_server
+cd express_server
 npm init
 npm install express express-http-proxy --save
 ```
