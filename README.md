@@ -101,7 +101,8 @@ npm init
 npm install express express-http-proxy --save
 ```
 #### Setup the folder as follows: <br>
-<img>
+![Capture](https://user-images.githubusercontent.com/48654189/55737083-23c0c000-5a57-11e9-9c31-54b89cbb6b5d.PNG)
+
 
 `node server.js`
 
