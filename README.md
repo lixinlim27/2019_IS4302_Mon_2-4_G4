@@ -68,7 +68,7 @@ Access to Cloud9 IDE which is available at "http://localhost:8181"
       - Insurance Claim
       - Insurance Record
 ```
-d. Issue Identities:
+#### d. Issue Identities: <br>
 ```
   Create composer credentials for each participant, using the ID name stated respectively. 
   - doctor1
@@ -103,19 +103,19 @@ Setup the folder as follows:
 <img>
 node server.js
 ```
-a. Access to Healthchain application which is available at http://localhost:8001
-b. Login to the website with the following credentials.
+#### a. Access to Healthchain application which is available at http://localhost:8001 <br>
+#### b. Login to the website with the following credentials. <br>
 ```
-  Usernames:
-    Doctor1
-    Doctor2
-    Admin1
-    Admin2
-    Patient1
-    Patient2
-    InsuranceCompany1
-    InsuranceCompany2
-  Passwords:
+Usernames:
+    - Doctor1
+    - Doctor2
+    - Admin1
+    - Admin2
+    - Patient1
+    - Patient2
+    - InsuranceCompany1
+    - InsuranceCompany2
+Passwords:
     (Password can be omitted)
 ```
 ### Stop Network
